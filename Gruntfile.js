@@ -3,37 +3,41 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    // grunt uglify
-    uglify: {
+    jshint: {
+        all: ['Gruntfile.js', 'public/js/script.js'],
+        options:{
+          esversion: 6
+        }
+      },
 
-      build: {
-        src: 'js/script.js',
-        dest: 'js/script.min.js'
-      }
-    },
-    // grunt-contrib-watch v1.1.0
     watch: {
-      all: {
-        files: ['sass/style.scss','css/style.css', 'public/js/script.js'],
-        tasks: ['sass','csslint','jshint'],
-
+      scripts: {
+        files: ['Gruntfile.js', 'public/js/script.js'],
+        tasks: ['jshint'],
+        options: {
+          interrupt: false,
+        },
       },
     },
-    // grunt-contrib-jshint
-    jshint: {
-      all: ['Gruntfile.js', 'js/script.js'],
-      options:{
-        esversion: 6
+
+    uglify: {
+      options: {
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      build: {
+        src: 'src/<%= pkg.name %>.js',
+        dest: 'build/<%= pkg.name %>.min.js'
       }
     }
   });
 
-  // Load the plugin that provides tasks.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).
-  grunt.registerTask('default', ['watch'], ['jshint']);
-  grunt.registerTask('ugly', ['uglify']);
+  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('ugly', ['uglify', 'cssmin', 'imagemin']);
+
 };

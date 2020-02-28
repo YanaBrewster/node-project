@@ -10,16 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@popperjs/core": "^2.0.6",
     "bootstrap": "^4.4.1",
-    "grunt-contrib-uglify": "^4.0.1",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.1"
+    "jquery": "^3.4.1"
   },
   "devDependencies": {
+    "@popperjs/core": "^2.0.6",
     "grunt": "^1.0.4",
-    "grunt-contrib-csslint": "^2.0.0",
     "grunt-contrib-jshint": "^2.1.0",
-    "grunt-contrib-watch": "^1.1.0"
+    "grunt-contrib-watch": "^1.1.0",
+    "popper.js": "^1.16.1"
   }
 }

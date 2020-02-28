@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Document</title>
+</head>
+<body>
+
+  <a href="about.html">About</a>
+  <a href="index.html">Home</a>
+  <a href="contact.html">Contact</a>
+  <div class="jumbotron bg-info">
+    <h3 class="display-4 text-white">Welcome to The Contact Page</h3>
+    <h1 class="">Node.js Project</h1>
+  </div>
+
+  <form action="sendForm" method="post">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" id="inputUsername">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="inputEmail">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+
+  <!-- <script src="../node_modules/jquery/dist/jquery.min.js"></script> -->
+  <!-- <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js">  </script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js">  </script> -->
+
+  <script src="js/script.js">  </script>
+
+</body>
+</html>
